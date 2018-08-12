@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fix Special Chars in Sinhala ASCHII fonts</title>
+    <script src="engine.js"></script>
+    <script>
+        function onTextChange() {
+            let text = document.getElementById("srcText").value;
+            let textInUnicode = convertAschiiToUnicode(text);
+            let textInFixedAschii = convertUnicodeToAschii(textInUnicode);
+            document.getElementById("inUnicode").innerHTML = textInUnicode;
+            document.getElementById("inAschii").innerHTML = textInFixedAschii;
+        }
+    </script>
+</head>
+<body>
+    <input id="srcText" type="text" onchange="onTextChange()" />
+    <div height="100px" >
+        <p  id="inUnicode"></p>
+    </div>
+    <div height="100px">
+        <p  id="inAschii"></p>
+    </div>
+</body>
+</html>
